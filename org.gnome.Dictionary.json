@@ -2,7 +2,6 @@
     "app-id": "org.gnome.Dictionary",
     "runtime": "org.gnome.Platform",
     "runtime-version": "3.30",
-    "branch": "stable",
     "sdk": "org.gnome.Sdk",
     "command": "gnome-dictionary",
     "rename-icon": "accessories-dictionary",
@@ -72,14 +71,13 @@
                 {
                     "type": "file",
                     "path": "accessories-dictionary-512.png"
-                }        
+                }
             ]
         },
         {
             "name": "gnome-dictionary",
             "buildsystem": "meson",
-            "builddir": true,
-            "config-opts": [ "--libdir=/app/lib", "-Dbuild_man=false" ],
+            "config-opts": [ "-Dbuild_man=false" ],
             "sources": [
                 {
                     "type": "archive",
