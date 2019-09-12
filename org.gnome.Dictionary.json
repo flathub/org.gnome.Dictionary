@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Dictionary",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.30",
+    "runtime-version": "3.34",
     "sdk": "org.gnome.Sdk",
     "command": "gnome-dictionary",
     "rename-icon": "accessories-dictionary",
@@ -13,16 +13,8 @@
         /* Needs to talk to the network: */
         "--share=network",
         /* Needs to save files locally */
-        "--filesystem=xdg-documents",
-        /* Needed for dconf to work */
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--filesystem=xdg-documents"
     ],
-    "build-options" : {
-        "env": {
-            "V": 1
-        }
-    },
     "cleanup": ["/include", "/lib/pkgconfig",
                 "/share/pkgconfig", "/share/aclocal",
                 "/man", "/share/man", "/share/gtk-doc",
