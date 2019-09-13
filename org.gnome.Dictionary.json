@@ -1,7 +1,7 @@
 {
     "app-id": "org.gnome.Dictionary",
     "runtime": "org.gnome.Platform",
-    "runtime-version": "3.30",
+    "runtime-version": "3.34",
     "sdk": "org.gnome.Sdk",
     "command": "gnome-dictionary",
     "rename-icon": "accessories-dictionary",
@@ -14,15 +14,8 @@
         "--share=network",
         /* Needs to save files locally */
         "--filesystem=xdg-documents",
-        /* Needed for dconf to work */
-        "--filesystem=xdg-run/dconf", "--filesystem=~/.config/dconf:ro",
-        "--talk-name=ca.desrt.dconf", "--env=DCONF_USER_CONFIG_DIR=.config/dconf"
+        "--metadata=X-DConf=migrate-path=/org/gnome/dictionary/"
     ],
-    "build-options" : {
-        "env": {
-            "V": 1
-        }
-    },
     "cleanup": ["/include", "/lib/pkgconfig",
                 "/share/pkgconfig", "/share/aclocal",
                 "/man", "/share/man", "/share/gtk-doc",
@@ -83,6 +76,10 @@
                     "type": "archive",
                     "url": "https://download.gnome.org/sources/gnome-dictionary/3.26/gnome-dictionary-3.26.1.tar.xz",
                     "sha256": "16b8bc248dcf68987826d5e39234b1bb7fd24a2607fcdbf4258fde88f012f300"
+                },
+                {
+                    "type": "patch",
+                    "path": "appdata_oars.patch"
                 }
             ]
         }
