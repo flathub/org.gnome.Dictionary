@@ -1,6 +1,6 @@
 app-id: org.gnome.Dictionary
 runtime: org.gnome.Platform
-runtime-version: '40'
+runtime-version: '42'
 sdk: org.gnome.Sdk
 command: gnome-dictionary
 finish-args:
@@ -34,7 +34,7 @@ modules:
       - -Dbuild_man=false
     sources:
       - type: archive
-        url: https://download.gnome.org/sources/gnome-dictionary/40/gnome-dictionary-40.0.tar.xz 
+        url: https://download.gnome.org/sources/gnome-dictionary/40/gnome-dictionary-40.0.tar.xz
         sha256: 2e650c2a4cea8cc4d02d4a583c456cbbc9d1871e918c7dc4de081ded1d830db5
       - type: patch
         path: 0001-fix-image-urls.patch
